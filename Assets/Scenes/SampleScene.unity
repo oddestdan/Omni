@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 102035915}
   - component: {fileID: 102035919}
   - component: {fileID: 102035920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f372d4c3bc82c094b95d317bb07adbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 5
 --- !u!195 &102035920
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -548,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356b244a75298534a8da72639d6688ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 10
   moveSpeed: 5
 --- !u!114 &988880138
 MonoBehaviour:
