@@ -24,6 +24,10 @@ public class MapGenerator : MonoBehaviour {
     Transform[,] tileMap;
 
     void Start() {
+        FindObjectOfType<Spawner>().OnNewWave += OnNewWave;
+    }
+    void OnNewWave(int waveNumber) {
+        mapIndex = waveNumber - 1;
         GenerateMap();
     }
 
