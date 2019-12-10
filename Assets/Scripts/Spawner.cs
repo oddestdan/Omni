@@ -89,9 +89,6 @@ public class Spawner : MonoBehaviour {
     }
 
     void OnEnemyDeath() {
-        print("enemiesRemainingAlive: " + enemiesRemainingAlive);
-        print("enemiesRemainingToSpawn: " + enemiesRemainingToSpawn);
-
         enemiesRemainingAlive--;
 
         bool hasClearedWave = enemiesRemainingToSpawn == 0 && enemiesRemainingAlive == 0;
