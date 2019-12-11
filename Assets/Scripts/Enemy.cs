@@ -8,6 +8,8 @@ public class Enemy : LivingEntity {
     public enum State { Idle, Chasing, Attacking };
     State currentState;
 
+    public ParticleSystem deathEffect;
+
     NavMeshAgent pathfinder;
     Transform target; // Player target to chase
     LivingEntity targetEntity;
@@ -61,7 +63,12 @@ public class Enemy : LivingEntity {
 
     public override void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection) {
         if (damage >= health) {
-            // Add death effect
+            // Add on death effect and clear it after 2 seconds
+            Destroy(Instantiate(
+                deathEffect.gameObject,
+                hitPoint,
+                Quaternion.FromToRotation(Vector3.forward, hitDirection)
+            ) as GameObject, deathEffect.main.startLifetime.constant);
         }
         base.TakeHit(damage, hitPoint, hitDirection);
     }

@@ -93,6 +93,7 @@ public class Spawner : MonoBehaviour {
 
         bool hasClearedWave = enemiesRemainingToSpawn == 0 && enemiesRemainingAlive == 0;
         if (hasClearedWave) {
+            // TODO: Wait for a second before launching a new wave ?
             NextWave();
         }
     }
