@@ -57,7 +57,13 @@ public class Enemy : LivingEntity {
                 }
             }
         }
+    }
 
+    public override void TakeHit(float damage, Vector3 hitPoint, Vector3 hitDirection) {
+        if (damage >= health) {
+            // Add death effect
+        }
+        base.TakeHit(damage, hitPoint, hitDirection);
     }
 
     void OnTargetDeath() {
