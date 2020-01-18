@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour {
         Ray frontRay = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         if (Physics.Raycast(frontRay, out hit, moveDistance + skinWidth, collisionMask, QueryTriggerInteraction.Collide)) {
+            // Debug.Log("'Collision mask is: '" + collisionMask);
             OnHitObject(hit.collider, hit.point);
         }
     }

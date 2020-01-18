@@ -14564,6 +14564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33ec6f5c221b1984a94e623737d64ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  devMode: 1
   waves:
   - infinite: 0
     enemyCount: 40

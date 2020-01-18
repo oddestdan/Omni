@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
+    public bool devMode;
+
     public Wave[] waves;
     public Enemy enemy;
 
@@ -54,7 +56,18 @@ public class Spawner : MonoBehaviour {
                 enemiesRemainingToSpawn--;
                 nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
 
-                StartCoroutine(SpawnEnemy());
+                StartCoroutine("SpawnEnemy");
+            }
+        }
+
+        // Developer mode
+        if (devMode) {
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                StopCoroutine("SpawnEnemy");
+                foreach (Enemy enemy in FindObjectsOfType<Enemy>()) {
+                    GameObject.Destroy(enemy.gameObject);
+                }
+                NextWave();
             }
         }
     }
